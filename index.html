@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleFE.css">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/demo.css" />
+    <link rel="stylesheet" type="text/css" href="assets/style.css" />
+      <link rel="stylesheet" type="text/css" href="assets/animate-custom.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
+    <title>Know Your State</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+<body>
+   
+        <div class="row" id="topSection">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <h4 class="mt-2 animated bounce">Know Your State</h4>
+            </div>
+            <div class="col-lg-5"></div>
+            <button type="button" class="btn btn-primary" id="button-login" onclick="document.getElementById('id01').style.display='block'">Login</button>
+            <button type="button" class="btn btn-primary" id="button-logout" onclick="refreshPage()">Log Out</button>
+            <div id="id01" class="modal">
+                    <div id="container_demo" >
+                            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                            <a class="hiddenanchor" id="toregister"></a>
+                            <a class="hiddenanchor" id="tologin"></a>
+                            <div id="wrapper">
+                                <div id="login" class="animate form">
+                                    <form  action="mysuperscript.php" autocomplete="on"> 
+                                            <h1>Log in</h1> 
+                                            <p> 
+                                                <label for="username" class="uname" data-icon="u" > Your email</label>
+                                                <input id="email-login" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                            </p>
+                                            <p> 
+                                                <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                                                <input id="password-login" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                            </p>
+                                        
+                                            <p class="login button"> 
+                                                <input id="login-button" type="submit" value="Login" /> 
+                                            </p>
+                                            <p class="change_link">
+                                                Not a member yet?
+                                                <a href="#toregister" class="to_register">Join us</a>
+                                            </p>
+                                        </form>
+                                    </div>
+            
+                                    <div id="register" class="animate form">
+                                        <form  action="mysuperscript.php" autocomplete="on"> 
+                                            <h1> Sign up </h1> 
+                                            <p> 
+                                                <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                                                <input id="username-register" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                                            </p>
+                                            <p> 
+                                                <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+                                                <input id="email-register" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                            </p>
+                                            <p> 
+                                                <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                                                <input id="password-register" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                            </p>
+                                            <p> 
+                                                <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                                                <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                            </p>
+                                            <p class="signin button"> 
+                                                <input id = "register-button" type="submit" value="Sign up"/> 
+                                            </p>
+                                            <p class="change_link">  
+                                                Already a member ?
+                                                <a href="#tologin" class="to_register"> Go and log in </a>
+                                             </p>
+                                    </form>
+                                </div>
+                    
+                            </div>
+                        </div>  
+                    </div>
+        </div>
+
+        <div class="row" id="picture"></div>      
+
+        <div class="row lg-2" id="questionSection">
+            <div class="col-lg-4" id="yelpResult"></div>
+                <div class="col-lg-4 mt-5" id="questionContainer">
+                    <div class="row justify-content-center animated bounceInLeft" id="OneQuestion">
+                        <h4 class="mx-3 mt-5" id="questionText">Which state would you like to know about?</h4>
+                    </div> 
+                    <div class="row rest justify-content-center" id="rest">
+                        <select class="row mx-4 mb-3" id="selectTab" onchange="changeQuestion()">
+                                <option value="state">State</option>
+                                <option value="alabama">Alabama</option>
+                                <option value="alaska">Alaska</option>
+                                <option value="arizona">Arizona</option>
+                                <option value="arkansas">Arkansas</option>
+                                <option value="california">California</option>
+                                <option value="colorado">Colorado</option>
+                                <option value="connecticut">Connecticut</option>
+                                <option value="delaware">Delaware</option>
+                                <option value="districtOfColumbia">District Of Columbia</option>
+                                <option value="florida">Florida</option>
+                                <option value="georgia">Georgia</option>
+                                <option value="hawaii">Hawaii</option>
+                                <option value="idaho">Idaho</option>
+                                <option value="illinois">illinois</option>
+                                <option value="Indiana">Indiana</option>
+                                <option value="Iowa">Iowa</option>
+                                <option value="Kansas">Kansas</option>
+                                <option value="Kentucky">Kentucky</option>
+                                <option value="louisianna">Louisianna</option>
+                                <option value="maine">Maine</option>
+                                <option value="maryland">Maryland</option>
+                                <option value="massachutes">Massachutes</option>
+                                <option value="michigan">Michigan</option>
+                                <option value="minnesota">Minnesota</option>
+                                <option value="mississippi">Mississippi</option>
+                                <option value="missouri">Missouri</option>
+                                <option value="montana">Montana</option>
+                                <option value="nebraska">Nebraska</option>
+                                <option value="nevada">Nevada</option>
+                                <option value="new hampshire">New Hampshire</option>
+                                <option value="new jersey">New Jersey</option>
+                                <option value="new mexico">New Mexico</option>
+                                <option value="new york">New York</option>
+                                <option value="north dakota">North Dakota</option>
+                                <option value="north carolina">North Carolina</option>
+                                <option value="ohio">Ohio</option>
+                                <option value="oklahoma">Oklahoma</option>
+                                <option value="oregon">Oregon</option>
+                                <option value="pennsylvania">Pennsylvania</option>
+                                <option value="rhode island">Rhode Island</option>
+                                <option value="south carolina">South Carolina</option>
+                                <option value="south dakota">South Dakota</option>
+                                <option value="tennessee">Tennessee</option>
+                                <option value="texas">Texas</option>
+                                <option value="utah">Utah</option>
+                                <option value="Vermont">Vermont</option>
+                                <option value="Virginia">Virginia</option>
+                                <option value="washington">Washington</option>
+                                <option value="west virginia">West Virginia</option>
+                                <option value="winsconsin">Wisconsin</option>
+                                <option value="wyoming">Wyoming</option>
+                        </select>
+                    </div>   
+                </div>   
+            <div class="col-lg-4" id="thirdCol"></div>
+        </div>
+        <footer id="return"><button type="button" class="btn btn-outline-info" id="refresh" onClick="refreshPage()">Return</button></footer>
+   
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+
+    <script src="javascriptFE.js"></script>
+    <script src="javascriptLogin.js"></script>
+    <script src="assets/yelpApi.js"></script>
+    <script src="assets/censusApi.js"></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+</body>
+</html>
